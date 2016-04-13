@@ -1,6 +1,6 @@
 {
   "name": "ratecontrol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple rate controller for connect-style servers.",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,8 @@
   },
   "keywords": [
     "rate",
-    "rate",
     "limiter",
-    "rate",
     "control",
-    "rate",
     "controller",
     "middleware"
   ],

@@ -21,7 +21,7 @@ function defaultCacheFactory() {
     };
 }
 
-module.exports = function RateController( _options ) {
+module.exports = function RateControl( _options ) {
     const options = extend( true, {
         trustedHeaders: [
             'x-client-ip',

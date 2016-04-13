@@ -70,9 +70,9 @@ test( 'RESTIFY: test route with no rate limiting (10 seconds)', ( t ) => {
 } );
 
 test( 'RESTIFY: create rate-limited route', ( t ) => {
-    const RateController = require( '../index.js' );
+    const RateControl = require( '../index.js' );
 
-    server.get( '/rate_limit', RateController( {
+    server.get( '/rate_limit', RateControl( {
         rate: '1/s'
     } ), ( request, response ) => {
         response.send( { ok: true } );
