@@ -72,9 +72,9 @@ test( 'EXPRESS: test route with no rate limiting (10 seconds)', ( t ) => {
 } );
 
 test( 'EXPRESS: create rate-limited route', ( t ) => {
-    const RateController = require( '../index.js' );
+    const RateControl = require( '../index.js' );
 
-    app.get( '/rate_limit', RateController( {
+    app.get( '/rate_limit', RateControl( {
         rate: '1/s'
     } ), ( request, response ) => {
         response.send( { ok: true } );
