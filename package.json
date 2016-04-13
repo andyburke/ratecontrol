@@ -1,0 +1,33 @@
+{
+  "name": "ratecontrol",
+  "version": "1.0.0",
+  "description": "A simple rate controller for connect-style servers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/**/*.js | tap-spec"
+  },
+  "keywords": [
+    "rate",
+    "rate",
+    "limiter",
+    "rate",
+    "control",
+    "rate",
+    "controller",
+    "middleware"
+  ],
+  "author": "Andy Burke <aburke@bitflood.org>",
+  "license": "MIT",
+  "dependencies": {
+    "extend": "^3.0.0",
+    "lru-cache": "^4.0.1",
+    "tokenpipe": "^1.0.1"
+  },
+  "devDependencies": {
+    "express": "^4.13.4",
+    "restify": "^4.0.4",
+    "superagent": "^1.8.3",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
+  }
+}
