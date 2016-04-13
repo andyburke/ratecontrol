@@ -1,6 +1,6 @@
 {
   "name": "ratecontrol",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple rate controller for connect-style servers.",
   "main": "index.js",
   "scripts": {

@@ -167,12 +167,15 @@ npm run test
 
 ## Contributing
 
-If you'd like to contribute:
+Contributions are encouraged and appreciated. To make the process as quick and
+painless as possible for everyone involved, here's a checklist that will make
+a pull request easily accepted:
 
- 1) Add tests for any new feature or bugfix
- 2) Ensure your code passes jshint according to the .jshintrc
- 3) Ensure your code is formatted according to the .jsbeautifyrc
- 4) Submit a Pull Request
+ 1) Implement your new feature or bugfix
+ 2) Add or update tests to ensure coverage
+ 3) Ensure your code passes jshint according to the .jshintrc
+ 4) Ensure your code is formatted according to the .jsbeautifyrc
+ 5) Submit
 
 ## License
 
