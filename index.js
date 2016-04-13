@@ -7,7 +7,7 @@ const TokenPipe = require( 'tokenpipe' );
 function defaultCacheFactory() {
     const lru = LRU( {
         max: 10000,
-        maxAge: 1000 * 60 * 60
+        maxAge: 1000 * 60 * 60 * 24
     } );
 
     return {

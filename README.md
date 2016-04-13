@@ -47,10 +47,7 @@ server.get( '/1_per_second', RateControl( {
 } ), onRequest );
 
 server.get( '/1000_per_day', RateControl( {
-    rate: '1000/day',
-    cache: {
-        maxAge: 1000 * 60 * 60 * 24 // have to adjust the cache maxAge if we want to limit at the rate of a day
-    }
+    rate: '1000/day'
 } ), onRequest );
 ```
 
