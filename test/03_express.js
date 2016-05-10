@@ -13,7 +13,9 @@ test( 'EXPRESS: create server', ( t ) => {
     t.ok( app, 'app created' );
 
     app.get( '/up', ( request, response ) => {
-        response.send( { up: true } );
+        response.send( {
+            up: true
+        } );
     } );
 
     server = app.listen( PORT, () => {
@@ -32,7 +34,9 @@ test( 'EXPRESS: create server', ( t ) => {
 
 test( 'EXPRESS: test route with no rate limiting (10 seconds)', ( t ) => {
     app.get( '/no_rate_limit', ( request, response ) => {
-        response.send( { no_rate_limit: true } );
+        response.send( {
+            no_rate_limit: true
+        } );
     } );
 
     const start = Date.now();
@@ -72,12 +76,14 @@ test( 'EXPRESS: test route with no rate limiting (10 seconds)', ( t ) => {
 } );
 
 test( 'EXPRESS: create rate-limited route', ( t ) => {
-    const RateControl = require( '../index.js' );
+    const rateController = require( '../index.js' );
 
-    app.get( '/rate_limit', RateControl( {
+    app.get( '/rate_limit', rateController( {
         rate: '1/s'
     } ), ( request, response ) => {
-        response.send( { ok: true } );
+        response.send( {
+            ok: true
+        } );
     } );
 
     t.pass( 'created rate-limited route' );

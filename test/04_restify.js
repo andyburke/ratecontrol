@@ -12,7 +12,9 @@ test( 'RESTIFY: create server', ( t ) => {
     t.ok( server, 'server created' );
 
     server.get( '/up', ( request, response ) => {
-        response.send( { up: true } );
+        response.send( {
+            up: true
+        } );
     } );
 
     server.listen( PORT, () => {
@@ -30,7 +32,9 @@ test( 'RESTIFY: create server', ( t ) => {
 
 test( 'RESTIFY: test route with no rate limiting (10 seconds)', ( t ) => {
     server.get( '/no_rate_limit', ( request, response ) => {
-        response.send( { no_rate_limit: true } );
+        response.send( {
+            no_rate_limit: true
+        } );
     } );
 
     const start = Date.now();
@@ -70,12 +74,14 @@ test( 'RESTIFY: test route with no rate limiting (10 seconds)', ( t ) => {
 } );
 
 test( 'RESTIFY: create rate-limited route', ( t ) => {
-    const RateControl = require( '../index.js' );
+    const rateController = require( '../index.js' );
 
-    server.get( '/rate_limit', RateControl( {
+    server.get( '/rate_limit', rateController( {
         rate: '1/s'
     } ), ( request, response ) => {
-        response.send( { ok: true } );
+        response.send( {
+            ok: true
+        } );
     } );
 
     t.pass( 'created rate-limited route' );
