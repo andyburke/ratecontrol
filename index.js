@@ -1,6 +1,7 @@
 'use strict';
 
 const extend = require( 'extend' );
+const getRequestIP = require( 'get-request-ip' );
 const LRU = require( 'lru-cache' );
 const TokenPipe = require( 'tokenpipe' );
 
@@ -35,23 +36,9 @@ module.exports = function RateControl( _options ) {
         rate: '10/s',
         cache: defaultCacheFactory(),
         getId: ( request, callback ) => {
-            let id = null;
-
-            options.trustedHeaders.some( ( header ) => {
-                id = request.headers[ header ];
-                return !!id;
-            } );
-
-            if ( !id ) {
-                /* jshint -W126 */
-                id = ( request.connection && request.connection.remoteAddress ) ||
-                    ( request.socket && request.socket.remoteAddress ) ||
-                    ( request.connection && request.connection.socket && request.connection.socket.remoteAddress ) ||
-                    ( request.info && request.info.remoteAddress );
-                /* jshint +W126 */
-            }
-
-            callback( null, id );
+            callback( null, getRequestIP( request, {
+                headers: options.trustedHeaders
+            } ) );
         },
         errorBody: {
             error: 'rate limit exceeded',

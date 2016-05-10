@@ -1,6 +1,6 @@
 {
   "name": "ratecontrol",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple rate controller for connect-style servers.",
   "main": "index.js",
   "repository": {
@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "extend": "^3.0.0",
+    "get-request-ip": "^1.0.0",
     "lru-cache": "^4.0.1",
     "tokenpipe": "^1.0.4"
   },
